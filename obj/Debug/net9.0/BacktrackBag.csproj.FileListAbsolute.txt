@@ -1,0 +1,14 @@
+c:\Users\Ondra\Desktop\BacktrackBag\bin\Debug\net9.0\BacktrackBag.exe
+C:\Users\Ondra\Desktop\BacktrackBag\bin\Debug\net9.0\BacktrackBag.deps.json
+C:\Users\Ondra\Desktop\BacktrackBag\bin\Debug\net9.0\BacktrackBag.runtimeconfig.json
+c:\Users\Ondra\Desktop\BacktrackBag\bin\Debug\net9.0\BacktrackBag.dll
+c:\Users\Ondra\Desktop\BacktrackBag\bin\Debug\net9.0\BacktrackBag.pdb
+c:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\BacktrackBag.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\BacktrackBag.AssemblyInfoInputs.cache
+c:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\BacktrackBag.AssemblyInfo.cs
+c:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\BacktrackBag.csproj.CoreCompileInputs.cache
+c:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\BacktrackBag.dll
+c:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\refint\BacktrackBag.dll
+c:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\BacktrackBag.pdb
+C:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\BacktrackBag.genruntimeconfig.cache
+C:\Users\Ondra\Desktop\BacktrackBag\obj\Debug\net9.0\ref\BacktrackBag.dll
