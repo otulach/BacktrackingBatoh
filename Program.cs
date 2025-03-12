@@ -1,5 +1,6 @@
 using System;
 using System.Runtime;
+using BenchmarkDotNet.Attributes;
 
 namespace BasicProgram
 {
@@ -21,18 +22,27 @@ namespace BasicProgram
 
             int[,] tableValue = new int[Items.Count() + 1, maxWeight + 1];
 
-            Rekursion(maxWeight, 0, Items, new List<Tuple<int, int, int>>());
+            Table(tableValue, Items, maxWeight);
 
+            // Setting print outside recursion to prevent unesccessary calls
 
-            Console.WriteLine(currentValue);
-            for (int i = 0; i < bestBag.Count; i++)
-            {
-                Console.Write(bestBag[i].Item3 + " ");
-            }
-            Console.WriteLine();
+            // Rekursion(maxWeight, 0, Items, new List<Tuple<int, int, int>>());
+
+            // Console.WriteLine(currentValue);
+            // for (int i = 0; i < bestBag.Count; i++)
+            // {
+            //     Console.Write(bestBag[i].Item3 + " ");
+            // }
+            // Console.WriteLine();
         }
-        static void Table(int[,] table, List<Tuple<int, int, int>> Items, int maxW)
+
+        public static void Table(int[,] table, List<Tuple<int, int, int>> Items, int maxW)
         {
+            for (int w = 0; w <= maxW; w++)
+            {
+                table[0, w] = 0;
+            }
+
             for (int i = 0; i < Items.Count(); i++)
             {
                 Tuple<int, int, int> item = Items[i];
@@ -44,7 +54,7 @@ namespace BasicProgram
                     int newValue = table[i, w];
                         
                     // Counting the value
-                    if (weight >= w)
+                    if (w >= weight)
                     {
                         int countedValue = value + table[i , w - weight];
                         if (countedValue > newValue)
@@ -55,10 +65,42 @@ namespace BasicProgram
                     table[i + 1, w] = newValue;
                 }
             }
+            
+            // for (int i = 0; i <= Items.Count(); i++)
+            // {
+            //     for (int w = 0; w <= maxW; w++)
+            //     {
+            //         Console.Out.Write(table[i, w] + " ");
+            //     }
+            //     Console.Out.WriteLine();
+            // }
+
+            // Tracing back the result of our table
+            List<int> result = new List<int>();
+            int traceI = Items.Count();
+            int traceW = maxW;
+
+            while (traceI > 0 & traceW > 0)
+            {
+                if (table[traceI, traceW] == table[traceI - 1, traceW]){
+
+                }
+                else{
+                    result.Add(traceI);
+                    traceW -= Items[traceI-1].Item1;
+                }
+                traceI -= 1;
+            }
+
+            Console.WriteLine(table[Items.Count(), maxW]);
+            for (int i = result.Count - 1; i >= 0; i--){
+                Console.Write(result[i] + " ");
+            }
+            Console.WriteLine();
         }
 
 
-        static void Rekursion(int maxWeigth, int index, List<Tuple<int, int, int>> allItems, List<Tuple<int, int, int>> itemsList)
+        public static void Rekursion(int maxWeigth, int index, List<Tuple<int, int, int>> allItems, List<Tuple<int, int, int>> itemsList)
         {
             Tuple<int, int> listInfo = Info(itemsList);
             int weight = listInfo.Item1;

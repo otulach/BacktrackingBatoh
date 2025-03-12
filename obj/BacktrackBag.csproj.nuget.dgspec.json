@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ondra\\Desktop\\BacktrackBag\\BacktrackBag.csproj": {}
+    "/Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/BacktrackBag.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ondra\\Desktop\\BacktrackBag\\BacktrackBag.csproj": {
+    "/Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/BacktrackBag.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ondra\\Desktop\\BacktrackBag\\BacktrackBag.csproj",
+        "projectUniqueName": "/Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/BacktrackBag.csproj",
         "projectName": "BacktrackBag",
-        "projectPath": "C:\\Users\\Ondra\\Desktop\\BacktrackBag\\BacktrackBag.csproj",
-        "packagesPath": "C:\\Users\\Ondra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ondra\\Desktop\\BacktrackBag\\obj\\",
+        "projectPath": "/Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/BacktrackBag.csproj",
+        "packagesPath": "/Users/ondra/.nuget/packages/",
+        "outputPath": "/Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ondra\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ondra/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,13 +36,19 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.14.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.25057.12/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
