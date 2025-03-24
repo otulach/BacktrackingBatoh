@@ -1,6 +1,8 @@
 using System;
 using System.Runtime;
+using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 
 namespace BasicProgram
 {
@@ -11,20 +13,20 @@ namespace BasicProgram
         static void Main(string[] args)
 
         {
-            string[] inputWeight = Console.ReadLine().Split();
-            string[] inputValue = Console.ReadLine().Split();
-            List<Tuple<int, int, int>> Items = new List<Tuple<int, int, int>>();
-            for (int i = 0; i < inputWeight.Length; i++)
-            {
-                Items.Add(new Tuple<int, int, int>(int.Parse(inputWeight[i]), int.Parse(inputValue[i]), i + 1));
-            }
-            int maxWeight = int.Parse(Console.ReadLine());
+            var summary = BenchmarkRunner.Run<KnapsackBenchmark>();
 
-            int[,] tableValue = new int[Items.Count() + 1, maxWeight + 1];
+            // string[] inputWeight = Console.ReadLine().Split();
+            // string[] inputValue = Console.ReadLine().Split();
+            // List<Tuple<int, int, int>> Items = new List<Tuple<int, int, int>>();
+            // for (int i = 0; i < inputWeight.Length; i++)
+            // {
+            //     Items.Add(new Tuple<int, int, int>(int.Parse(inputWeight[i]), int.Parse(inputValue[i]), i + 1));
+            // }
+            // int maxWeight = int.Parse(Console.ReadLine());
 
-            Table(tableValue, Items, maxWeight);
+            // int[,] tableValue = new int[Items.Count() + 1, maxWeight + 1];
 
-            // Setting print outside recursion to prevent unesccessary calls
+            // Table(tableValue, Items, maxWeight);
 
             // Rekursion(maxWeight, 0, Items, new List<Tuple<int, int, int>>());
 
@@ -92,11 +94,11 @@ namespace BasicProgram
                 traceI -= 1;
             }
 
-            Console.WriteLine(table[Items.Count(), maxW]);
-            for (int i = result.Count - 1; i >= 0; i--){
-                Console.Write(result[i] + " ");
-            }
-            Console.WriteLine();
+            // Console.WriteLine(table[Items.Count(), maxW]);
+            // for (int i = result.Count - 1; i >= 0; i--){
+            //     Console.Write(result[i] + " ");
+            // }
+            // Console.WriteLine();
         }
 
 
@@ -137,6 +139,39 @@ namespace BasicProgram
                 value += list[i].Item2;
             }
             return new Tuple<int, int>(weight, value);
+        }
+    }
+
+    public class KnapsackBenchmark
+    {
+        private List<Tuple<int, int, int>> Items;
+        private int maxWeight;
+        private int[,] tableValue;
+
+        public KnapsackBenchmark()
+        {
+            maxWeight = 7;
+            Items = new List<Tuple<int, int, int>>()
+            {
+                Tuple.Create(3, 2, 1),
+                Tuple.Create(1, 2, 2),
+                Tuple.Create(3, 4, 3),
+                Tuple.Create(4, 5, 4),
+                Tuple.Create(2, 3, 5),
+            };
+            tableValue = new int[Items.Count + 1, maxWeight + 1];
+        }
+
+        [Benchmark]
+        public void RunRekursion()
+        {
+            Program.Rekursion(maxWeight, 0, Items, new List<Tuple<int, int, int>>());
+        }
+
+        [Benchmark]
+        public void RunTable()
+        {
+            Program.Table(tableValue, Items, maxWeight);
         }
     }
 }

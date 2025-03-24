@@ -1,0 +1,5 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 2 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true /p:IntermediateOutputPath="/Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/bin/Release/net9.0/1a94a900-6018-4ee1-9fed-8984cc4b3613/obj/Release/net9.0/" /p:OutDir="/Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/bin/Release/net9.0/1a94a900-6018-4ee1-9fed-8984cc4b3613/bin/Release/net9.0/" /p:OutputPath="/Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/bin/Release/net9.0/1a94a900-6018-4ee1-9fed-8984cc4b3613/bin/Release/net9.0/" in /Users/ondra/Desktop/VostrejCode/BacktrackingBatoh/bin/Release/net9.0/1a94a900-6018-4ee1-9fed-8984cc4b3613
